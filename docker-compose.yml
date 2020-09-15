@@ -1,0 +1,35 @@
+version: '2.1'
+services:
+  shoppingcart-db:
+    container_name: shoppingcart-db
+    image: 'mysql'
+    environment:
+      MYSQL_DATABASE: shoppingcart_db
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    ports:
+        - '3306:3306'
+    restart: always
+    networks:
+        - back-tier
+    healthcheck:
+        test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+        interval: 10s
+        timeout: 20s
+        retries: 10
+  shoppingcart-app:
+    image: shoppingcart-app
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    restart: always
+    networks:
+      - back-tier
+    depends_on:
+      shoppingcart-db:
+          condition: service_healthy
+networks:
+  back-tier:
+    driver: bridge

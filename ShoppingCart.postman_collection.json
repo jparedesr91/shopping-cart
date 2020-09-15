@@ -1,0 +1,506 @@
+{
+	"info": {
+		"_postman_id": "5f695aa8-11ee-410c-adca-400d0f5483a7",
+		"name": "ShoppingCart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sales",
+			"item": [
+				{
+					"name": "GET_AllSales",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RGYWN0b3J5Iiwic3ViIjoiam9yZ2UiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjAwMDYyODA0LCJleHAiOjE2MDAwNjM0MDR9.5miU5evV5PYMRKjYkjFcrknF3LL-nkwa7VoTeLRaF7Rc46MShtEp-PkDspj428i1fTOrmwduFZPNQgO4gPfAYQ"
+							}
+						],
+						"url": {
+							"raw": "{{api_localhost}}/api/rest/v1/sales",
+							"host": [
+								"{{api_localhost}}"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"sales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_CreateSale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RGYWN0b3J5Iiwic3ViIjoiam9yZ2UiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjAwMDYyODA0LCJleHAiOjE2MDAwNjM0MDR9.5miU5evV5PYMRKjYkjFcrknF3LL-nkwa7VoTeLRaF7Rc46MShtEp-PkDspj428i1fTOrmwduFZPNQgO4gPfAYQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\":\"2020-09-14T10:15:30+01:00\",\r\n    \"clientId\":1,\r\n    \"clientName\":\"jorge\"\r\n}"
+						},
+						"url": {
+							"raw": "{{api_localhost}}/api/rest/v1/sales",
+							"host": [
+								"{{api_localhost}}"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"sales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_SalesByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RGYWN0b3J5Iiwic3ViIjoiam9yZ2UiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjAwMTQ0MTAwLCJleHAiOjE2MDAxNDQ3MDB9.sy2I4AtHn0aonSyB7nYtM1e2QVdrDVWqsn02YdM1kMjctylGUYDaBDn1k852soAhgmTOmmHZedKBTmwdU8X49A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_localhost}}/api/rest/v1/sales/1",
+							"host": [
+								"{{api_localhost}}"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"sales",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_CreateSaleDetail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RGYWN0b3J5Iiwic3ViIjoiam9yZ2UiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjAwMDk4ODc0LCJleHAiOjE2MDAwOTk0NzR9.ECV5UPAXMwwbrYeCiFYyotsjeCnkQGJ8qPwuR6AD3mqyAPC__6RUB_uXElwwklSLziBFbmJRFOtGJoPjIiL0Nw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " [{\r\n    \"id\": 1,\r\n    \"name\": \"mango12\",\r\n    \"price\": 23\r\n},\r\n{\r\n    \"id\": 3,\r\n    \"name\": \"mango22\",\r\n    \"price\": 2\r\n}\r\n\r\n]"
+						},
+						"url": {
+							"raw": "{{api_localhost}}/api/rest/v1/sales/detail/1",
+							"host": [
+								"{{api_localhost}}"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"sales",
+								"detail",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "POST_CreateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RGYWN0b3J5Iiwic3ViIjoiam9yZ2UiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjAwMTQ0MTAwLCJleHAiOjE2MDAxNDQ3MDB9.sy2I4AtHn0aonSyB7nYtM1e2QVdrDVWqsn02YdM1kMjctylGUYDaBDn1k852soAhgmTOmmHZedKBTmwdU8X49A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"mango\",\r\n    \"price\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_localhost}}/api/rest/v1/products",
+							"host": [
+								"{{api_localhost}}"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT_UpdateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RGYWN0b3J5Iiwic3ViIjoiam9yZ2UiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjAwMDYxMTc2LCJleHAiOjE2MDAwNjE3NzZ9.XbKG9zUooqjXS7d4IhiLYd5XIGU6skU1BmulRHLLADVN2W3UqGadbUwqlSDh3R-ydhLrv9eQlkuU7lmApcUiQA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"mango\",\r\n    \"price\":15\r\n}"
+						},
+						"url": {
+							"raw": "{{api_localhost}}/api/rest/v1/products",
+							"host": [
+								"{{api_localhost}}"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_AllProducts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RGYWN0b3J5Iiwic3ViIjoiam9yZ2UiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjAwMTQ0MTAwLCJleHAiOjE2MDAxNDQ3MDB9.sy2I4AtHn0aonSyB7nYtM1e2QVdrDVWqsn02YdM1kMjctylGUYDaBDn1k852soAhgmTOmmHZedKBTmwdU8X49A"
+							}
+						],
+						"url": {
+							"raw": "{{api_localhost}}/api/rest/v1/products",
+							"host": [
+								"{{api_localhost}}"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ProductById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RGYWN0b3J5Iiwic3ViIjoiam9yZ2UiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjAwMDYxOTA2LCJleHAiOjE2MDAwNjI1MDZ9.pbT1d_P--EhtiLYQqXQyqJSNnCM0KbVDlTewKxB4D4G-tTmr9nT8aXh14Jqy7BE-AgtQDi5mYRbooA1Pz-sGLQ"
+							}
+						],
+						"url": {
+							"raw": "{{api_localhost}}/api/rest/v1/products/2",
+							"host": [
+								"{{api_localhost}}"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELTE_ProductById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RGYWN0b3J5Iiwic3ViIjoiam9yZ2UiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjAwMDYyNTk4LCJleHAiOjE2MDAwNjMxOTh9.grh2K3d3-K8gcsUc5rueqk8rwPKqYqhfeZ72DMnwTSDWA_nkJrnE0lDUSRxNMESRpGNoBQDwc2vYfFTxJFNLSA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{api_localhost}}/api/rest/v1/products/2",
+							"host": [
+								"{{api_localhost}}"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "POST_CreateClient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RGYWN0b3J5Iiwic3ViIjoiam9yZ2UiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjAwMTQ0MTAwLCJleHAiOjE2MDAxNDQ3MDB9.sy2I4AtHn0aonSyB7nYtM1e2QVdrDVWqsn02YdM1kMjctylGUYDaBDn1k852soAhgmTOmmHZedKBTmwdU8X49A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"jorge3\",\r\n    \"lastName\":\"infante osorio2\",\r\n    \"dni\":\"12345\",\r\n    \"phone\":\"344545\",\r\n    \"email\":\"qwqw@gmail.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_localhost}}/api/rest/v1/clients",
+							"host": [
+								"{{api_localhost}}"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "call-JWT-user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user",
+									"value": "jorge",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pass",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_localhost}}/api/rest/v1/auth/user",
+							"host": [
+								"{{api_localhost}}"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
